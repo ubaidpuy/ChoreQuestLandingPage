@@ -1,0 +1,3140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChoreQuest — Screen Mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #0F172A;
+  min-height: 100vh;
+  padding: 48px 32px 80px;
+}
+
+/* ─── PAGE TITLE ─── */
+.page-title {
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+.page-subtitle {
+  text-align: center;
+  color: #64748B;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 56px;
+}
+
+/* ─── SECTION HEADERS ─── */
+.section-header {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #1E293B;
+}
+
+/* ─── SCREEN ROW ─── */
+.screen-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 64px;
+  align-items: flex-start;
+}
+
+/* ─── SCREEN WRAPPER ─── */
+.screen-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.screen-label {
+  color: #94A3B8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ─── PHONE FRAME ─── */
+.phone {
+  width: 390px;
+  height: 844px;
+  border: 8px solid #1E293B;
+  border-radius: 44px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px #334155;
+  position: relative;
+  overflow: hidden;
+  background: #F8FAFC;
+  flex-shrink: 0;
+}
+
+/* ─── NOTCH ─── */
+.notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 30px;
+  background: #1E293B;
+  border-radius: 0 0 18px 18px;
+  z-index: 100;
+}
+
+/* ─── STATUS BAR ─── */
+.status-bar {
+  height: 44px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 20px 6px;
+  position: relative;
+  z-index: 10;
+}
+.status-bar .time {
+  font-size: 13px;
+  font-weight: 700;
+}
+.status-bar .icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+.status-bar.light .time,
+.status-bar.light .icons { color: #0F172A; }
+.status-bar.dark .time,
+.status-bar.dark .icons { color: #fff; }
+.status-bar.blue .time,
+.status-bar.blue .icons { color: #fff; }
+
+/* signal bars icon */
+.sig { display:flex; align-items:flex-end; gap:1px; height:12px; }
+.sig span { width:3px; background:currentColor; border-radius:1px; }
+.sig span:nth-child(1){ height:4px; }
+.sig span:nth-child(2){ height:6px; }
+.sig span:nth-child(3){ height:9px; }
+.sig span:nth-child(4){ height:12px; }
+
+/* ─── PHONE INNER (scrollable content area) ─── */
+.phone-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 36px;
+}
+
+/* ══════════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════════ */
+:root {
+  --blue-500: #3B82F6;
+  --blue-100: #DBEAFE;
+  --blue-700: #1D4ED8;
+  --yellow-400: #FBBF24;
+  --yellow-100: #FEF3C7;
+  --green-500: #10B981;
+  --green-100: #D1FAE5;
+  --orange-400: #FB923C;
+  --orange-100: #FFEDD5;
+  --red-500: #EF4444;
+  --red-100: #FEE2E2;
+  --slate-50: #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0F172A;
+  --white: #FFFFFF;
+  --kid-bg: #EFF6FF;
+}
+
+/* ══════════════════════════════════════════
+   KID VIEW SHARED COMPONENTS
+══════════════════════════════════════════ */
+
+/* Header bar */
+.kid-header {
+  background: var(--blue-500);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  position: relative;
+  z-index: 5;
+}
+.kid-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 200px;
+}
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.avatar-emma { background: #A78BFA; }
+.avatar-lucas { background: #34D399; }
+.avatar-sm { width: 36px; height: 36px; font-size: 15px; }
+.avatar-md { width: 44px; height: 44px; font-size: 20px; }
+.avatar-lg { width: 48px; height: 48px; font-size: 22px; }
+.kid-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kid-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+}
+.credit-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.credit-num {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+.credit-coin {
+  font-size: 26px;
+  line-height: 1;
+}
+.credit-label {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
+  text-align: right;
+  margin-top: 1px;
+}
+.gear-icon {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  cursor: pointer;
+}
+
+/* Tab bar */
+.kid-tabs {
+  height: 56px;
+  background: #fff;
+  border-bottom: 1px solid var(--slate-200);
+  display: flex;
+  align-items: stretch;
+}
+.kid-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  position: relative;
+  font-size: 12px;
+}
+.kid-tab .tab-icon { font-size: 18px; }
+.kid-tab .tab-label { font-size: 12px; font-weight: 600; color: var(--slate-400); }
+.kid-tab.active .tab-label { color: var(--blue-500); font-weight: 700; }
+.kid-tab.active .tab-icon { filter: none; }
+.kid-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 3px;
+  background: var(--blue-500);
+  border-radius: 3px 3px 0 0;
+}
+.kid-tab-inactive .tab-icon { opacity: 0.5; }
+
+/* Quest scroll zone */
+.quest-zone {
+  background: var(--kid-bg);
+  flex: 1;
+  overflow: hidden;
+  padding: 16px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Chore card */
+.chore-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.chore-card-top {
+  padding: 16px 20px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.chore-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--slate-900);
+  line-height: 1.3;
+  flex: 1;
+}
+.chore-name-sm {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--slate-900);
+  line-height: 1.3;
+  flex: 1;
+}
+.credit-badge {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: var(--yellow-100);
+  border: 1px solid var(--yellow-400);
+  border-radius: 999px;
+  padding: 0 10px;
+  height: 28px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.credit-badge span {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--yellow-400);
+}
+.credit-badge .icon { font-size: 13px; }
+
+.chore-card-bottom {
+  padding: 10px 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Status pills */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  padding: 0 12px;
+  height: 28px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.pill-todo    { background: var(--blue-100); color: var(--blue-500); }
+.pill-pending { background: var(--orange-100); color: var(--orange-400); }
+.pill-done    { background: var(--green-100); color: var(--green-500); }
+
+/* Complete button */
+.btn-complete {
+  width: 110px;
+  height: 44px;
+  background: var(--blue-500);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-complete.disabled {
+  background: var(--slate-200);
+  color: var(--slate-400);
+  cursor: default;
+}
+
+/* Photo required indicator */
+.photo-req {
+  font-size: 11px;
+  color: var(--slate-400);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+/* ══════════════════════════════════════════
+   PARENT VIEW SHARED COMPONENTS
+══════════════════════════════════════════ */
+
+.parent-screen {
+  background: var(--slate-50);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Top app bar */
+.parent-appbar {
+  height: 64px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+}
+.appbar-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+.appbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+.appbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 20px;
+  color: var(--slate-600);
+}
+
+/* Bottom nav */
+.parent-bottomnav {
+  height: 64px;
+  background: #fff;
+  border-top: 1px solid var(--slate-200);
+  display: flex;
+  flex-shrink: 0;
+}
+.nav-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  position: relative;
+}
+.nav-tab .nav-icon { font-size: 20px; color: var(--slate-400); }
+.nav-tab .nav-label { font-size: 11px; font-weight: 600; color: var(--slate-400); }
+.nav-tab.active .nav-icon { color: var(--blue-500); }
+.nav-tab.active .nav-label { color: var(--blue-500); }
+.nav-badge {
+  position: absolute;
+  top: 6px;
+  right: calc(50% - 20px);
+  background: var(--red-500);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scrollable body */
+.parent-body {
+  flex: 1;
+  overflow: hidden;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Card */
+.p-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* Section label */
+.section-lbl {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--slate-500);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  padding: 0 2px;
+}
+
+/* Setting row */
+.setting-row {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 56px;
+  gap: 12px;
+  border-bottom: 1px solid var(--slate-100);
+}
+.setting-row:last-child { border-bottom: none; }
+.setting-icon { font-size: 18px; color: var(--slate-500); flex-shrink: 0; }
+.setting-text { flex: 1; }
+.setting-label { font-size: 15px; font-weight: 600; color: var(--slate-900); }
+.setting-sub { font-size: 12px; font-weight: 400; color: var(--slate-500); margin-top: 1px; }
+.setting-right { display: flex; align-items: center; gap: 4px; font-size: 18px; color: var(--slate-400); }
+
+/* Input field */
+.p-input {
+  width: 100%;
+  height: 52px;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: 8px;
+  padding: 0 14px 0 40px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  color: var(--slate-900);
+  outline: none;
+}
+.input-wrap {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: var(--slate-400);
+}
+.input-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-600);
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* ══════════════════════════════════════════
+   SCREEN K-1: QUEST BOARD
+══════════════════════════════════════════ */
+.k1-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--kid-bg);
+}
+.k1-quest-list {
+  flex: 1;
+  overflow: hidden;
+  padding: 16px 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ══════════════════════════════════════════
+   SCREEN K-2: CHORE COMPLETION
+══════════════════════════════════════════ */
+.k2-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--kid-bg);
+}
+.k2-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(15,23,42,0.5);
+  z-index: 10;
+}
+.k2-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 340px;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  z-index: 20;
+  padding: 12px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.drag-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--slate-200);
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+.k2-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.k2-chore-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--slate-900);
+  flex: 1;
+}
+.k2-sub {
+  font-size: 13px;
+  color: var(--slate-500);
+  margin-bottom: 14px;
+}
+.k2-divider {
+  height: 1px;
+  background: var(--slate-200);
+  margin: 0 -0px 16px;
+}
+.k2-photo-zone {
+  width: 100%;
+  height: 110px;
+  background: var(--slate-100);
+  border: 2px dashed var(--slate-300);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.k2-camera-icon { font-size: 36px; color: var(--blue-500); }
+.k2-photo-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--slate-600);
+  text-align: center;
+}
+.btn-submit {
+  width: 100%;
+  height: 52px;
+  background: var(--blue-500);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.btn-cancel {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--slate-500);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ══════════════════════════════════════════
+   SCREEN K-3: BADGE SHELF
+══════════════════════════════════════════ */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 16px;
+}
+.badge-cell {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 16px 8px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-height: 130px;
+}
+.badge-cell.locked {
+  background: var(--slate-100);
+  box-shadow: none;
+}
+.badge-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  position: relative;
+}
+.badge-icon-wrap.locked {
+  filter: grayscale(100%);
+  opacity: 0.4;
+}
+.lock-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--slate-400);
+}
+.badge-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--slate-900);
+  text-align: center;
+  line-height: 1.3;
+}
+.badge-name.locked { color: var(--slate-400); font-weight: 600; }
+.badge-hint {
+  font-size: 11px;
+  color: var(--slate-400);
+  text-align: center;
+  line-height: 1.4;
+}
+.badge-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 12px;
+}
+.badge-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--slate-800);
+}
+.badge-count-pill {
+  background: var(--blue-100);
+  color: var(--blue-500);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+.badge-section-sub {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--slate-500);
+  padding: 12px 16px 8px;
+}
+
+/* ══════════════════════════════════════════
+   SCREEN K-4: LEADERBOARD
+══════════════════════════════════════════ */
+.lb-week-label {
+  text-align: center;
+  padding: 16px 16px 4px;
+}
+.lb-week-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--slate-800);
+}
+.lb-week-range {
+  font-size: 13px;
+  color: var(--slate-500);
+  margin-top: 4px;
+}
+.podium-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 16px 0;
+  height: 170px;
+}
+.podium-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.podium-avatar-wrap {
+  position: relative;
+  margin-bottom: 4px;
+}
+.podium-crown {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: var(--yellow-400);
+}
+.podium-child-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--slate-900);
+  text-align: center;
+  margin-bottom: 4px;
+}
+.podium-block {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.podium-block .pos-num {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+}
+.podium-1 { height: 80px; background: var(--yellow-400); }
+.podium-2 { height: 60px; background: var(--slate-300); }
+.podium-3 { height: 44px; background: var(--orange-400); }
+
+.lb-full-rankings {
+  padding: 16px 16px 0;
+}
+.lb-rankings-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--slate-500);
+  margin-bottom: 8px;
+}
+.lb-row {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 68px;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.lb-row.you {
+  background: var(--blue-100);
+  border-left: 4px solid var(--blue-500);
+}
+.lb-rank {
+  font-size: 22px;
+  font-weight: 800;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.lb-rank.gold { color: var(--yellow-400); }
+.lb-rank.other { color: var(--slate-400); }
+.lb-info { flex: 1; min-width: 0; }
+.lb-name { font-size: 16px; font-weight: 700; color: var(--slate-900); display: flex; align-items: center; gap: 6px; }
+.lb-name.you-blue { color: #1D4ED8; }
+.lb-chores-sub { font-size: 13px; color: var(--slate-500); margin-top: 2px; }
+.you-chip {
+  background: var(--blue-500);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 8px;
+  border-radius: 999px;
+}
+.lb-count {
+  text-align: right;
+  flex-shrink: 0;
+}
+.lb-count-num {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--blue-500);
+  line-height: 1;
+}
+.lb-count-label { font-size: 11px; color: var(--slate-400); }
+
+/* ══════════════════════════════════════════
+   SCREEN K-5: ALL DONE
+══════════════════════════════════════════ */
+.k5-body {
+  flex: 1;
+  background: linear-gradient(180deg, #3B82F6 0%, #6366F1 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px 40px;
+  text-align: center;
+  gap: 0;
+}
+.k5-trophy {
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.k5-headline {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.k5-subline {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.k5-credits-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--yellow-400);
+}
+.k5-streak-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 999px;
+  padding: 0 16px;
+  height: 36px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 32px;
+  margin-top: 8px;
+}
+.k5-streak-chip .flame { font-size: 18px; }
+.btn-badges {
+  width: 220px;
+  height: 52px;
+  background: var(--yellow-400);
+  color: var(--slate-900);
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.k5-back-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ══════════════════════════════════════════
+   SCREEN P-1: SIGN UP
+══════════════════════════════════════════ */
+.p1-screen {
+  background: #fff;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.p1-body {
+  flex: 1;
+  padding: 48px 20px 32px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.p1-logo-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.p1-app-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--blue-500) 0%, #6366F1 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  margin-bottom: 8px;
+  box-shadow: 0 8px 24px rgba(59,130,246,0.35);
+}
+.p1-wordmark {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--slate-900);
+}
+.p1-tagline {
+  font-size: 15px;
+  color: var(--slate-500);
+  margin-top: 4px;
+}
+.p1-form-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 18px;
+}
+.p1-field { margin-bottom: 14px; }
+.strength-bar {
+  display: flex;
+  gap: 3px;
+  margin-top: 5px;
+  align-items: center;
+}
+.strength-seg {
+  height: 4px;
+  flex: 1;
+  background: var(--slate-200);
+  border-radius: 2px;
+}
+.strength-seg.filled { background: var(--green-500); }
+.strength-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green-500);
+  margin-left: 4px;
+}
+.terms-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--blue-500);
+  border-radius: 4px;
+  background: var(--blue-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #fff;
+  font-size: 12px;
+}
+.terms-text {
+  font-size: 13px;
+  color: var(--slate-700);
+  line-height: 1.5;
+}
+.terms-link { color: var(--blue-500); text-decoration: underline; }
+.coppa-note {
+  font-size: 11px;
+  color: var(--slate-500);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+.btn-primary {
+  width: 100%;
+  height: 54px;
+  background: var(--blue-500);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.35);
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+.signin-link {
+  text-align: center;
+  font-size: 14px;
+  color: var(--slate-600);
+}
+.signin-link a { color: var(--blue-500); text-decoration: underline; }
+
+/* ══════════════════════════════════════════
+   SCREEN P-2: PARENT DASHBOARD
+══════════════════════════════════════════ */
+.p2-appbar {
+  height: 64px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+.p2-appbar-text { flex: 1; }
+.p2-parent-label { font-size: 18px; font-weight: 700; color: var(--slate-900); }
+.p2-family-name { font-size: 13px; color: var(--slate-500); margin-top: 1px; }
+.p2-appbar-right { display: flex; gap: 4px; }
+
+.greeting-block { margin-bottom: 4px; }
+.greeting-text { font-size: 20px; font-weight: 700; color: var(--slate-900); }
+.greeting-date { font-size: 14px; color: var(--slate-500); margin-top: 4px; }
+
+.pending-banner {
+  background: var(--orange-100);
+  border: 1px solid var(--orange-400);
+  border-radius: 12px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 8px;
+}
+.pending-banner-icon { font-size: 20px; color: var(--orange-400); }
+.pending-banner-text {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--orange-400);
+}
+.pending-banner-action {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue-500);
+  cursor: pointer;
+}
+
+.kids-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.kids-section-title { font-size: 18px; font-weight: 700; color: var(--slate-900); }
+.add-child-btn { font-size: 14px; font-weight: 600; color: var(--blue-500); }
+
+.child-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.child-card-top {
+  display: flex;
+  align-items: center;
+  padding: 16px 16px 12px;
+  gap: 12px;
+}
+.child-card-info { flex: 1; }
+.child-card-name { font-size: 16px; font-weight: 700; color: var(--slate-900); }
+.child-card-age { font-size: 13px; color: var(--slate-500); margin-top: 3px; }
+.pending-badge-circle {
+  width: 28px;
+  height: 28px;
+  background: var(--orange-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+.child-card-divider { height: 1px; background: var(--slate-100); margin: 0 16px; }
+.child-card-stats {
+  display: flex;
+  padding: 12px 16px;
+}
+.stat-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.stat-num {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+.stat-num.blue { color: var(--blue-500); }
+.stat-num.dark { color: var(--slate-900); }
+.stat-num.green { color: var(--green-500); }
+.stat-label { font-size: 11px; color: var(--slate-500); margin-top: 3px; }
+.stat-inline { display: flex; align-items: center; gap: 3px; justify-content: center; }
+
+.child-progress-bar {
+  margin: 0 16px 12px;
+}
+.progress-track {
+  height: 6px;
+  background: var(--slate-100);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--green-500);
+  border-radius: 3px;
+}
+.progress-label { font-size: 12px; color: var(--slate-500); }
+.progress-label.done { color: var(--green-500); }
+
+/* ══════════════════════════════════════════
+   SCREEN P-3: APPROVALS INBOX
+══════════════════════════════════════════ */
+.pending-count-chip {
+  background: var(--red-100);
+  border: 1px solid var(--red-500);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red-500);
+}
+
+.approval-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  padding: 14px 14px;
+  gap: 12px;
+}
+.approval-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  object-fit: cover;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.approval-info { flex: 1; min-width: 0; }
+.approval-child { font-size: 15px; font-weight: 700; color: var(--slate-900); }
+.approval-chore { font-size: 14px; font-weight: 600; color: var(--blue-500); }
+.approval-time { font-size: 12px; color: var(--slate-500); margin: 3px 0 8px; }
+.approval-actions { display: flex; gap: 8px; }
+.btn-reject {
+  width: 90px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid var(--red-500);
+  color: var(--red-500);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-approve-sm {
+  width: 90px;
+  height: 36px;
+  background: var(--green-500);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ══════════════════════════════════════════
+   SCREEN P-4: PHOTO REVIEW MODAL
+══════════════════════════════════════════ */
+.p4-screen {
+  background: var(--slate-900);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.p4-topbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  position: relative;
+}
+.p4-close { font-size: 24px; color: #fff; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+.p4-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+.p4-photo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.p4-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1E3A5F 0%, #1E293B 50%, #2D3748 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.p4-photo-icon { font-size: 64px; opacity: 0.6; }
+.p4-photo-caption { font-size: 14px; color: var(--slate-400); font-weight: 600; }
+
+/* Simulate a made bed photo */
+.p4-bed-scene {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #E0E7FF 0%, #C7D2FE 40%, #A5B4FC 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+.p4-bed-emoji { font-size: 80px; }
+.p4-bed-label { font-size: 14px; font-weight: 600; color: #4F46E5; opacity: 0.7; }
+
+.p4-panel {
+  background: var(--slate-900);
+  border-radius: 20px 20px 0 0;
+  padding: 16px 16px 24px;
+  flex-shrink: 0;
+}
+.p4-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.p4-info-left { display: flex; align-items: center; gap: 8px; }
+.p4-child-name { font-size: 15px; font-weight: 700; color: #fff; }
+.p4-chore-name { font-size: 14px; font-weight: 600; color: #93C5FD; }
+.p4-credit-badge {
+  background: var(--yellow-400);
+  color: var(--slate-900);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.p4-time { font-size: 12px; color: var(--slate-400); margin: 4px 0 12px; }
+.p4-divider { height: 1px; background: #334155; margin: 0 0 12px; }
+.btn-approve-lg {
+  width: 100%;
+  height: 52px;
+  background: var(--green-500);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+.btn-reject-lg {
+  width: 100%;
+  height: 52px;
+  background: transparent;
+  border: 1px solid #F87171;
+  color: #F87171;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* ══════════════════════════════════════════
+   SCREEN P-5: CHORE MANAGEMENT
+══════════════════════════════════════════ */
+.fab {
+  position: absolute;
+  bottom: 80px;
+  right: 16px;
+  width: 56px;
+  height: 56px;
+  background: var(--blue-500);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+.child-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px 8px;
+}
+.child-group-left { display: flex; align-items: center; gap: 8px; }
+.child-group-name { font-size: 15px; font-weight: 700; color: var(--slate-900); }
+.chore-count-chip {
+  background: var(--slate-100);
+  color: var(--slate-600);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+.chore-list-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 68px;
+  margin-bottom: 8px;
+}
+.chore-item-left { flex: 1; min-width: 0; }
+.chore-item-name { font-size: 15px; font-weight: 600; color: var(--slate-900); }
+.chore-chips { display: flex; gap: 4px; margin-top: 4px; }
+.chore-chip {
+  background: var(--slate-100);
+  color: var(--slate-600);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.chore-item-right {
+  background: var(--yellow-100);
+  border: 1px solid var(--yellow-400);
+  border-radius: 999px;
+  padding: 0 10px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.chore-item-credit { font-size: 13px; font-weight: 700; color: var(--yellow-400); }
+.chore-group { margin-bottom: 16px; }
+
+/* ══════════════════════════════════════════
+   SCREEN P-6: ADD CHORE FORM
+══════════════════════════════════════════ */
+.p6-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--slate-50);
+  overflow: hidden;
+}
+.p6-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(15,23,42,0.5);
+  z-index: 10;
+}
+.p6-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 720px;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  z-index: 20;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.p6-sheet-inner {
+  padding: 12px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  flex: 1;
+}
+.p6-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.p6-title { font-size: 20px; font-weight: 700; color: var(--slate-900); }
+.p6-cancel { font-size: 15px; font-weight: 600; color: var(--blue-500); }
+.p6-divider { height: 1px; background: var(--slate-200); margin-bottom: 16px; }
+.p6-field { margin-bottom: 14px; }
+.p6-field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate-600);
+  margin-bottom: 6px;
+}
+.p6-field-label .req { color: var(--red-500); }
+.p6-input {
+  width: 100%;
+  height: 52px;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: 8px;
+  padding: 0 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  color: var(--slate-900);
+  outline: none;
+}
+.p6-textarea {
+  width: 100%;
+  height: 68px;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: var(--slate-500);
+  outline: none;
+  resize: none;
+}
+.credit-picker {
+  display: flex;
+  background: var(--slate-100);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 44px;
+}
+.credit-seg {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--slate-500);
+  cursor: pointer;
+}
+.credit-seg.active {
+  background: var(--blue-500);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 6px;
+  margin: 2px;
+}
+.picker-hint { font-size: 12px; color: var(--slate-500); margin-top: 4px; }
+.child-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.child-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--slate-100);
+  border: 1px solid var(--slate-200);
+  border-radius: 22px;
+  padding: 0 12px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--slate-700);
+}
+.child-chip.selected {
+  background: var(--blue-100);
+  border-color: var(--blue-500);
+  color: var(--blue-700);
+}
+.child-chip-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+.recurrence-picker {
+  display: flex;
+  background: var(--slate-100);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 44px;
+}
+.rec-seg {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--slate-500);
+  cursor: pointer;
+}
+.rec-seg.active {
+  background: var(--blue-500);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 6px;
+  margin: 2px;
+}
+.photo-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+.photo-toggle-left { flex: 1; }
+.photo-toggle-label { font-size: 14px; font-weight: 600; color: var(--slate-900); }
+.photo-toggle-sub { font-size: 12px; color: var(--slate-500); margin-top: 2px; }
+.toggle-switch {
+  width: 44px;
+  height: 24px;
+  background: var(--blue-500);
+  border-radius: 12px;
+  position: relative;
+  flex-shrink: 0;
+}
+.toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.btn-save {
+  width: 100%;
+  height: 52px;
+  background: var(--blue-500);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+  cursor: pointer;
+  margin-top: 14px;
+}
+
+/* ══════════════════════════════════════════
+   SCREEN P-7: SETTINGS
+══════════════════════════════════════════ */
+.p7-body {
+  flex: 1;
+  overflow: hidden;
+  padding: 16px 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.settings-section { display: flex; flex-direction: column; gap: 0; }
+.settings-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.stepper-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.stepper-btn.minus { background: var(--slate-200); color: var(--slate-600); }
+.stepper-btn.plus  { background: var(--blue-500); color: #fff; }
+.stepper-val { font-size: 16px; font-weight: 700; color: var(--slate-900); min-width: 24px; text-align: center; }
+
+.avatar-circle-36 {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.add-child-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--blue-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--blue-500);
+  flex-shrink: 0;
+}
+.setting-row-danger .setting-label { color: var(--red-500); }
+.setting-row-danger .setting-right { color: var(--red-400); }
+
+/* Subscription chip */
+.manage-btn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue-500);
+}
+
+/* scrollable content simulation */
+.scroll-fade {
+  position: relative;
+}
+.scroll-fade::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 32px;
+  background: linear-gradient(transparent, rgba(248,250,252,0.9));
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<h1 class="page-title">ChoreQuest — Screen Mockups</h1>
+<p class="page-subtitle">Static HTML mockups · The Martinez Family · March 25, 2026</p>
+
+<!-- ════════════════════════════════════════
+     KID VIEW
+════════════════════════════════════════ -->
+<div class="section-header">Kid View</div>
+
+<div class="screen-row">
+
+  <!-- ─── K-1: QUEST BOARD ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">K-1: Quest Board</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="k1-screen">
+          <!-- Status bar -->
+          <div class="status-bar blue">
+            <span class="time">9:41</span>
+            <div class="icons">
+              <div class="sig"><span></span><span></span><span></span><span></span></div>
+              <span>WiFi</span>
+              <span>🔋</span>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <div class="kid-header">
+            <div class="kid-header-left">
+              <div class="avatar-circle avatar-emma">👧</div>
+              <span class="kid-name">Emma</span>
+            </div>
+            <div class="gear-icon">⚙</div>
+            <div class="kid-header-right">
+              <div class="credit-row">
+                <span class="credit-num">7</span>
+                <span class="credit-coin">🪙</span>
+              </div>
+              <div class="credit-label">credits</div>
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <div class="kid-tabs">
+            <div class="kid-tab active">
+              <span class="tab-icon">✅</span>
+              <span class="tab-label">Quests</span>
+            </div>
+            <div class="kid-tab">
+              <span class="tab-icon" style="opacity:0.45">🏅</span>
+              <span class="tab-label">Badges</span>
+            </div>
+            <div class="kid-tab">
+              <span class="tab-icon" style="opacity:0.45">🏆</span>
+              <span class="tab-label">Leaderboard</span>
+            </div>
+          </div>
+
+          <!-- Quest list -->
+          <div class="quest-zone">
+            <!-- Card 1: Done -->
+            <div class="chore-card">
+              <div class="chore-card-top">
+                <span class="chore-name">Make Your Bed</span>
+                <div class="credit-badge"><span class="icon">🪙</span><span>+2</span></div>
+              </div>
+              <div class="chore-card-bottom">
+                <div class="pill pill-done">✅ Done</div>
+                <div class="btn-complete disabled">Complete</div>
+              </div>
+            </div>
+
+            <!-- Card 2: Pending -->
+            <div class="chore-card">
+              <div class="chore-card-top">
+                <div style="flex:1">
+                  <div class="chore-name">Clean Your Room</div>
+                  <div class="photo-req">📷 Photo required</div>
+                </div>
+                <div class="credit-badge"><span class="icon">🪙</span><span>+3</span></div>
+              </div>
+              <div class="chore-card-bottom">
+                <div class="pill pill-pending">⏳ Pending</div>
+                <div class="btn-complete disabled">Complete</div>
+              </div>
+            </div>
+
+            <!-- Card 3: Done -->
+            <div class="chore-card">
+              <div class="chore-card-top">
+                <span class="chore-name">Set the Table</span>
+                <div class="credit-badge"><span class="icon">🪙</span><span>+1</span></div>
+              </div>
+              <div class="chore-card-bottom">
+                <div class="pill pill-done">✅ Done</div>
+                <div class="btn-complete disabled">Complete</div>
+              </div>
+            </div>
+
+            <!-- Card 4: To Do -->
+            <div class="chore-card">
+              <div class="chore-card-top">
+                <span class="chore-name">Do Your Homework</span>
+                <div class="credit-badge"><span class="icon">🪙</span><span>+5</span></div>
+              </div>
+              <div class="chore-card-bottom">
+                <div class="pill pill-todo">To Do</div>
+                <div class="btn-complete">Complete</div>
+              </div>
+            </div>
+
+            <!-- Card 5: To Do -->
+            <div class="chore-card">
+              <div class="chore-card-top">
+                <span class="chore-name">Feed the Dog</span>
+                <div class="credit-badge"><span class="icon">🪙</span><span>+2</span></div>
+              </div>
+              <div class="chore-card-bottom">
+                <div class="pill pill-todo">To Do</div>
+                <div class="btn-complete">Complete</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── K-2: CHORE COMPLETION ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">K-2: Chore Completion</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="k2-overlay">
+          <!-- Background: quest board visible behind -->
+          <div style="height:100%;background:var(--kid-bg);display:flex;flex-direction:column;">
+            <div class="status-bar blue" style="background:var(--blue-500)">
+              <span class="time" style="color:#fff">9:41</span>
+              <div class="icons" style="color:#fff"><div class="sig"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>🔋</span></div>
+            </div>
+            <div class="kid-header">
+              <div class="kid-header-left"><div class="avatar-circle avatar-emma">👧</div><span class="kid-name">Emma</span></div>
+              <div class="kid-header-right"><div class="credit-row"><span class="credit-num">7</span><span class="credit-coin">🪙</span></div><div class="credit-label">credits</div></div>
+            </div>
+            <div class="kid-tabs">
+              <div class="kid-tab active"><span class="tab-icon">✅</span><span class="tab-label">Quests</span></div>
+              <div class="kid-tab"><span class="tab-icon" style="opacity:0.45">🏅</span><span class="tab-label">Badges</span></div>
+              <div class="kid-tab"><span class="tab-icon" style="opacity:0.45">🏆</span><span class="tab-label">Leaderboard</span></div>
+            </div>
+            <div style="padding:16px;display:flex;flex-direction:column;gap:10px;">
+              <div class="chore-card"><div class="chore-card-top"><span class="chore-name">Make Your Bed</span><div class="credit-badge"><span class="icon">🪙</span><span>+2</span></div></div><div class="chore-card-bottom"><div class="pill pill-done">✅ Done</div><div class="btn-complete disabled">Complete</div></div></div>
+              <div class="chore-card" style="opacity:0.4"><div class="chore-card-top"><div style="flex:1"><div class="chore-name">Clean Your Room</div><div class="photo-req">📷 Photo required</div></div><div class="credit-badge"><span class="icon">🪙</span><span>+3</span></div></div><div class="chore-card-bottom"><div class="pill pill-todo">To Do</div><div class="btn-complete">Complete</div></div></div>
+            </div>
+          </div>
+
+          <!-- Dim overlay -->
+          <div class="k2-dim"></div>
+
+          <!-- Bottom sheet -->
+          <div class="k2-sheet">
+            <div class="drag-handle"></div>
+            <div class="k2-header">
+              <span class="k2-chore-name">Clean Your Room</span>
+              <div class="credit-badge"><span class="icon">🪙</span><span>+3</span></div>
+            </div>
+            <div class="k2-sub">📷 Photo required for this quest</div>
+            <div class="k2-divider"></div>
+            <div class="k2-photo-zone">
+              <div class="k2-camera-icon">📷</div>
+              <div class="k2-photo-text">Take a photo or choose from gallery</div>
+            </div>
+            <div class="btn-submit" style="background:var(--slate-200);color:var(--slate-400);">Submit for Approval</div>
+            <div class="btn-cancel">Cancel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── K-3: BADGE SHELF ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">K-3: Badge Shelf</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="k1-screen">
+          <div class="status-bar blue">
+            <span class="time">9:41</span>
+            <div class="icons"><div class="sig"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="kid-header">
+            <div class="kid-header-left"><div class="avatar-circle avatar-emma">👧</div><span class="kid-name">Emma</span></div>
+            <div class="kid-header-right"><div class="credit-row"><span class="credit-num">7</span><span class="credit-coin">🪙</span></div><div class="credit-label">credits</div></div>
+          </div>
+          <div class="kid-tabs">
+            <div class="kid-tab"><span class="tab-icon" style="opacity:0.45">✅</span><span class="tab-label">Quests</span></div>
+            <div class="kid-tab active"><span class="tab-icon">🏅</span><span class="tab-label">Badges</span></div>
+            <div class="kid-tab"><span class="tab-icon" style="opacity:0.45">🏆</span><span class="tab-label">Leaderboard</span></div>
+          </div>
+
+          <!-- Badge body -->
+          <div style="flex:1;background:var(--kid-bg);overflow:hidden;">
+            <div class="badge-section-header">
+              <span class="badge-section-title">Your Badges</span>
+              <span class="badge-count-pill">2 earned</span>
+            </div>
+            <div class="badge-grid">
+              <!-- Earned: First Quest -->
+              <div class="badge-cell">
+                <div class="badge-icon-wrap" style="background:#FEF3C7;border-radius:12px;">⭐</div>
+                <span class="badge-name">First Quest</span>
+              </div>
+              <!-- Earned: Week Warrior -->
+              <div class="badge-cell">
+                <div class="badge-icon-wrap" style="background:#D1FAE5;border-radius:12px;">🔥</div>
+                <span class="badge-name">Week Warrior</span>
+              </div>
+              <!-- Placeholder to fill row -->
+              <div style="width:111px;height:130px;"></div>
+            </div>
+
+            <div class="badge-section-sub">Coming Up</div>
+            <div class="badge-grid" style="margin-top:0;">
+              <!-- Locked: Credit Master -->
+              <div class="badge-cell locked">
+                <div class="badge-icon-wrap locked" style="background:#F1F5F9;border-radius:12px;position:relative;">
+                  <span>🏆</span>
+                  <div class="lock-overlay">🔒</div>
+                </div>
+                <span class="badge-name locked">Credit Master</span>
+                <span class="badge-hint">50 credits total</span>
+              </div>
+              <!-- Locked: Super Helper -->
+              <div class="badge-cell locked">
+                <div class="badge-icon-wrap locked" style="background:#F1F5F9;border-radius:12px;position:relative;">
+                  <span>🦸</span>
+                  <div class="lock-overlay">🔒</div>
+                </div>
+                <span class="badge-name locked">Super Helper</span>
+                <span class="badge-hint">All chores 5 days</span>
+              </div>
+              <!-- Locked: Speed Star -->
+              <div class="badge-cell locked">
+                <div class="badge-icon-wrap locked" style="background:#F1F5F9;border-radius:12px;position:relative;">
+                  <span>⚡</span>
+                  <div class="lock-overlay">🔒</div>
+                </div>
+                <span class="badge-name locked">Speed Star</span>
+                <span class="badge-hint">10 day streak</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── K-4: LEADERBOARD ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">K-4: Leaderboard</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="k1-screen">
+          <div class="status-bar blue">
+            <span class="time">9:41</span>
+            <div class="icons"><div class="sig"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="kid-header">
+            <div class="kid-header-left"><div class="avatar-circle avatar-emma">👧</div><span class="kid-name">Emma</span></div>
+            <div class="kid-header-right"><div class="credit-row"><span class="credit-num">7</span><span class="credit-coin">🪙</span></div><div class="credit-label">credits</div></div>
+          </div>
+          <div class="kid-tabs">
+            <div class="kid-tab"><span class="tab-icon" style="opacity:0.45">✅</span><span class="tab-label">Quests</span></div>
+            <div class="kid-tab"><span class="tab-icon" style="opacity:0.45">🏅</span><span class="tab-label">Badges</span></div>
+            <div class="kid-tab active"><span class="tab-icon">🏆</span><span class="tab-label">Leaderboard</span></div>
+          </div>
+
+          <!-- Leaderboard body -->
+          <div style="flex:1;background:var(--kid-bg);overflow:hidden;">
+            <div class="lb-week-label">
+              <div class="lb-week-title">This Week's Champions</div>
+              <div class="lb-week-range">Mon – Sun, March 23–29</div>
+            </div>
+
+            <!-- Podium -->
+            <div class="podium-section">
+              <!-- 2nd: Lucas -->
+              <div class="podium-col">
+                <div class="podium-avatar-wrap">
+                  <div class="avatar-circle avatar-lucas" style="width:40px;height:40px;font-size:17px;border:2px solid #fff;">👦</div>
+                </div>
+                <div class="podium-child-name">Lucas</div>
+                <div class="podium-block podium-2"><span class="pos-num">2</span></div>
+              </div>
+              <!-- 1st: Emma -->
+              <div class="podium-col">
+                <div class="podium-avatar-wrap">
+                  <div class="podium-crown">👑</div>
+                  <div class="avatar-circle avatar-emma" style="width:48px;height:48px;font-size:22px;border:2px solid #fff;">👧</div>
+                </div>
+                <div class="podium-child-name">Emma</div>
+                <div class="podium-block podium-1"><span class="pos-num">1</span></div>
+              </div>
+              <!-- 3rd placeholder (only 2 kids) -->
+              <div class="podium-col" style="opacity:0;pointer-events:none;">
+                <div class="podium-avatar-wrap"><div class="avatar-circle" style="width:40px;height:40px;"></div></div>
+                <div class="podium-child-name">—</div>
+                <div class="podium-block podium-3"><span class="pos-num">3</span></div>
+              </div>
+            </div>
+
+            <!-- Full Rankings -->
+            <div class="lb-full-rankings">
+              <div class="lb-rankings-title">Full Rankings</div>
+              <!-- Emma - 1st, current user -->
+              <div class="lb-row you">
+                <div class="lb-rank gold">1</div>
+                <div class="avatar-circle avatar-emma" style="width:40px;height:40px;font-size:17px;flex-shrink:0;">👧</div>
+                <div class="lb-info">
+                  <div class="lb-name you-blue">Emma 👑 <span class="you-chip">You</span></div>
+                  <div class="lb-chores-sub">12 chores this week</div>
+                </div>
+                <div class="lb-count">
+                  <div class="lb-count-num">12</div>
+                  <div class="lb-count-label">chores</div>
+                </div>
+              </div>
+              <!-- Lucas - 2nd -->
+              <div class="lb-row">
+                <div class="lb-rank other">2</div>
+                <div class="avatar-circle avatar-lucas" style="width:40px;height:40px;font-size:17px;flex-shrink:0;">👦</div>
+                <div class="lb-info">
+                  <div class="lb-name">Lucas</div>
+                  <div class="lb-chores-sub">7 chores this week</div>
+                </div>
+                <div class="lb-count">
+                  <div class="lb-count-num">7</div>
+                  <div class="lb-count-label">chores</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── K-5: ALL DONE ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">K-5: All Done / Empty State</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="k1-screen">
+          <div class="status-bar blue">
+            <span class="time">9:41</span>
+            <div class="icons"><div class="sig"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="kid-header">
+            <div class="kid-header-left"><div class="avatar-circle avatar-emma">👧</div><span class="kid-name">Emma</span></div>
+            <div class="kid-header-right"><div class="credit-row"><span class="credit-num">13</span><span class="credit-coin">🪙</span></div><div class="credit-label">credits</div></div>
+          </div>
+          <div class="kid-tabs">
+            <div class="kid-tab active"><span class="tab-icon">✅</span><span class="tab-label">Quests</span></div>
+            <div class="kid-tab"><span class="tab-icon" style="opacity:0.45">🏅</span><span class="tab-label">Badges</span></div>
+            <div class="kid-tab"><span class="tab-icon" style="opacity:0.45">🏆</span><span class="tab-label">Leaderboard</span></div>
+          </div>
+
+          <!-- Celebration zone -->
+          <div class="k5-body">
+            <div class="k5-trophy">🏆</div>
+            <div style="font-size:48px;margin-bottom:8px;">🎉✨🎊</div>
+            <div class="k5-headline">All Quests Done!</div>
+            <div class="k5-subline">You earned <span class="k5-credits-num">13</span> credits today!</div>
+            <div class="k5-streak-chip"><span class="flame">🔥</span>4 day streak!</div>
+            <div class="btn-badges">⭐ See Your Badges</div>
+            <div class="k5-back-link">Back to Quests</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end kid view row -->
+
+
+<!-- ════════════════════════════════════════
+     PARENT VIEW
+════════════════════════════════════════ -->
+<div class="section-header">Parent View</div>
+
+<div class="screen-row">
+
+  <!-- ─── P-1: SIGN UP ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">P-1: Sign Up</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="p1-screen">
+          <div class="status-bar light" style="background:#fff;">
+            <span class="time">9:41</span>
+            <div class="icons"><div class="sig"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>🔋</span></div>
+          </div>
+          <div class="p1-body">
+            <!-- Logo -->
+            <div class="p1-logo-zone">
+              <div class="p1-app-icon">🎯</div>
+              <div class="p1-wordmark">ChoreQuest</div>
+              <div class="p1-tagline">Turn chores into screen time.</div>
+            </div>
+
+            <div class="p1-form-title">Create your family account</div>
+
+            <!-- Family Name -->
+            <div class="p1-field">
+              <label class="input-label">Family Name</label>
+              <div class="input-wrap">
+                <span class="input-icon">🏠</span>
+                <input class="p-input" type="text" value="The Martinez Family" readonly style="color:var(--slate-900);">
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="p1-field">
+              <label class="input-label">Email Address</label>
+              <div class="input-wrap">
+                <span class="input-icon">✉️</span>
+                <input class="p-input" type="email" value="sarah@martinez.com" readonly style="color:var(--slate-900);">
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="p1-field">
+              <label class="input-label">Password</label>
+              <div class="input-wrap">
+                <span class="input-icon">🔒</span>
+                <input class="p-input" type="password" value="securepass" readonly style="padding-right:40px;">
+                <span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--slate-400);">👁</span>
+              </div>
+              <div class="strength-bar">
+                <div class="strength-seg filled"></div>
+                <div class="strength-seg filled"></div>
+                <div class="strength-seg filled"></div>
+                <span class="strength-label">Strong</span>
+              </div>
+            </div>
+
+            <!-- Terms -->
+            <div class="terms-row">
+              <div class="checkbox">✓</div>
+              <div class="terms-text">I agree to the <span class="terms-link">Privacy Policy</span> and <span class="terms-link">Terms of Service</span></div>
+            </div>
+            <div class="coppa-note">ChoreQuest complies with COPPA. No personal data is collected from children.</div>
+
+            <!-- CTA -->
+            <div class="btn-primary">Create Family Account</div>
+            <div class="signin-link">Already have an account? <a href="#">Sign in</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── P-2: PARENT DASHBOARD ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">P-2: Parent Dashboard</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="parent-screen">
+          <div class="status-bar light" style="background:#fff;">
+            <span class="time">9:41</span>
+            <div class="icons"><div class="sig"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>🔋</span></div>
+          </div>
+
+          <!-- App bar -->
+          <div class="p2-appbar">
+            <div class="p2-appbar-text">
+              <div class="p2-parent-label">Parent Mode</div>
+              <div class="p2-family-name">The Martinez Family</div>
+            </div>
+            <div class="p2-appbar-right">
+              <div class="icon-btn">🔓</div>
+              <div class="icon-btn">⚙️</div>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="parent-body" style="overflow:hidden;">
+            <!-- Greeting -->
+            <div class="greeting-block">
+              <div class="greeting-text">Good morning, Sarah 👋</div>
+              <div class="greeting-date">Wednesday, March 25</div>
+            </div>
+
+            <!-- Pending banner -->
+            <div class="pending-banner">
+              <div class="pending-banner-icon">🔔</div>
+              <div class="pending-banner-text">1 chore waiting for your review</div>
+              <div class="pending-banner-action">Review Now ›</div>
+            </div>
+
+            <!-- Kids section -->
+            <div class="kids-section-header">
+              <span class="kids-section-title">Your Kids</span>
+              <span class="add-child-btn">Add Child +</span>
+            </div>
+
+            <!-- Emma card -->
+            <div class="child-card">
+              <div class="child-card-top">
+                <div class="avatar-circle avatar-emma avatar-md">👧</div>
+                <div class="child-card-info">
+                  <div class="child-card-name">Emma</div>
+                  <div class="child-card-age">Age 10</div>
+                </div>
+                <div class="pending-badge-circle" title="1 pending approval">1</div>
+              </div>
+              <div class="child-card-divider"></div>
+              <div class="child-card-stats">
+                <div class="stat-block">
+                  <div class="stat-num blue">7</div>
+                  <div class="stat-label">credits today</div>
+                </div>
+                <div class="stat-block">
+                  <div class="stat-num dark stat-inline">4 <span style="font-size:16px;">🔥</span></div>
+                  <div class="stat-label">day streak</div>
+                </div>
+                <div class="stat-block">
+                  <div class="stat-num green" style="display:inline;">3</div><span class="stat-num" style="color:var(--slate-400);font-size:22px;font-weight:800;">/5</span>
+                  <div class="stat-label">chores done</div>
+                </div>
+              </div>
+              <div class="child-progress-bar">
+                <div class="progress-track"><div class="progress-fill" style="width:60%"></div></div>
+                <div class="progress-label">2 more to go</div>
+              </div>
+            </div>
+
+            <!-- Lucas card -->
+            <div class="child-card">
+              <div class="child-card-top">
+                <div class="avatar-circle avatar-lucas avatar-md">👦</div>
+                <div class="child-card-info">
+                  <div class="child-card-name">Lucas</div>
+                  <div class="child-card-age">Age 8</div>
+                </div>
+              </div>
+              <div class="child-card-divider"></div>
+              <div class="child-card-stats">
+                <div class="stat-block">
+                  <div class="stat-num blue">3</div>
+                  <div class="stat-label">credits today</div>
+                </div>
+                <div class="stat-block">
+                  <div class="stat-num dark stat-inline">1 <span style="font-size:16px;">🔥</span></div>
+                  <div class="stat-label">day streak</div>
+                </div>
+                <div class="stat-block">
+                  <div class="stat-num green" style="display:inline;">1</div><span class="stat-num" style="color:var(--slate-400);font-size:22px;font-weight:800;">/5</span>
+                  <div class="stat-label">chores done</div>
+                </div>
+              </div>
+              <div class="child-progress-bar">
+                <div class="progress-track"><div class="progress-fill" style="width:20%"></div></div>
+                <div class="progress-label">4 more to go</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom nav -->
+          <div class="parent-bottomnav">
+            <div class="nav-tab active"><div class="nav-icon">🏠</div><div class="nav-label">Dashboard</div></div>
+            <div class="nav-tab"><div class="nav-icon" style="color:var(--slate-400)">📋</div><div class="nav-label">Chores</div></div>
+            <div class="nav-tab" style="position:relative">
+              <div class="nav-icon" style="color:var(--slate-400)">✅</div>
+              <div class="nav-label">Approvals</div>
+              <div class="nav-badge">1</div>
+            </div>
+            <div class="nav-tab"><div class="nav-icon" style="color:var(--slate-400)">⚙️</div><div class="nav-label">Settings</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── P-3: APPROVALS INBOX ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">P-3: Approvals Inbox</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="parent-screen">
+          <div class="status-bar light" style="background:#fff;">
+            <span class="time">9:41</span>
+            <div class="icons"><div class="sig"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>🔋</span></div>
+          </div>
+
+          <!-- App bar -->
+          <div class="parent-appbar">
+            <span style="font-size:20px;color:var(--slate-600);margin-right:8px;cursor:pointer;">←</span>
+            <div class="appbar-center">Approvals Inbox</div>
+            <div class="appbar-right">
+              <span class="pending-count-chip">1 pending</span>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="parent-body" style="overflow:hidden;">
+            <div style="font-size:16px;font-weight:700;color:var(--slate-600);margin-bottom:8px;">Waiting for Review (1)</div>
+
+            <!-- Submission item -->
+            <div class="approval-item">
+              <!-- Photo thumbnail -->
+              <div class="approval-thumb" style="background:linear-gradient(135deg,#C7D2FE,#A5B4FC);border-radius:8px;">
+                <div style="font-size:32px;text-align:center;">🛏</div>
+              </div>
+              <div class="approval-info">
+                <div class="approval-child">Emma Martinez</div>
+                <div class="approval-chore">Clean Your Room</div>
+                <div class="approval-time">Submitted 12 mins ago</div>
+                <div class="approval-actions">
+                  <div class="btn-reject">Reject</div>
+                  <div class="btn-approve-sm">Approve</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Divider + Reviewed Today -->
+            <div style="font-size:14px;font-weight:600;color:var(--slate-500);margin:16px 0 8px;">Reviewed Today</div>
+
+            <!-- Reviewed item (approved) -->
+            <div class="approval-item" style="opacity:0.7;">
+              <div class="approval-thumb" style="background:var(--slate-100);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                <span style="font-size:28px;color:var(--slate-400);">🖼</span>
+              </div>
+              <div class="approval-info">
+                <div class="approval-child">Lucas Martinez</div>
+                <div class="approval-chore">Make Your Bed</div>
+                <div class="approval-time">Reviewed 1 hour ago</div>
+                <div style="margin-top:4px;">
+                  <span class="pill pill-done" style="font-size:12px;height:24px;padding:0 10px;">✅ Approved</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Another reviewed (rejected) -->
+            <div class="approval-item" style="opacity:0.7;margin-top:8px;">
+              <div class="approval-thumb" style="background:var(--slate-100);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                <span style="font-size:28px;color:var(--slate-400);">🖼</span>
+              </div>
+              <div class="approval-info">
+                <div class="approval-child">Emma Martinez</div>
+                <div class="approval-chore">Set the Table</div>
+                <div class="approval-time">Reviewed 3 hours ago</div>
+                <div style="margin-top:4px;">
+                  <span class="pill" style="background:var(--red-100);color:var(--red-500);font-size:12px;height:24px;padding:0 10px;">✗ Rejected</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom nav -->
+          <div class="parent-bottomnav">
+            <div class="nav-tab"><div class="nav-icon" style="color:var(--slate-400)">🏠</div><div class="nav-label">Dashboard</div></div>
+            <div class="nav-tab"><div class="nav-icon" style="color:var(--slate-400)">📋</div><div class="nav-label">Chores</div></div>
+            <div class="nav-tab active" style="position:relative">
+              <div class="nav-icon">✅</div>
+              <div class="nav-label">Approvals</div>
+            </div>
+            <div class="nav-tab"><div class="nav-icon" style="color:var(--slate-400)">⚙️</div><div class="nav-label">Settings</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── P-4: PHOTO REVIEW MODAL ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">P-4: Photo Review Modal</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="p4-screen">
+          <div class="status-bar dark" style="background:var(--slate-900);">
+            <span class="time">9:41</span>
+            <div class="icons"><div class="sig" style="color:#fff"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>🔋</span></div>
+          </div>
+
+          <!-- Top bar -->
+          <div class="p4-topbar">
+            <div class="p4-close">✕</div>
+            <div class="p4-title">Emma's Photo</div>
+          </div>
+
+          <!-- Photo zone -->
+          <div class="p4-photo">
+            <div class="p4-bed-scene">
+              <div style="background:rgba(255,255,255,0.3);width:220px;height:140px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;">
+                <div style="font-size:56px;">🛏️</div>
+                <div style="font-size:13px;font-weight:700;color:#4338CA;opacity:0.85;">Clean Room — Emma</div>
+              </div>
+              <div style="font-size:12px;color:#818CF8;margin-top:8px;font-weight:600;">Photo submission · March 25</div>
+            </div>
+          </div>
+
+          <!-- Action panel -->
+          <div class="p4-panel">
+            <div class="p4-info-row">
+              <div class="p4-info-left">
+                <div class="avatar-circle avatar-emma" style="width:32px;height:32px;font-size:14px;border:none;">👧</div>
+                <div>
+                  <div class="p4-child-name">Emma</div>
+                  <div class="p4-chore-name">Clean Your Room</div>
+                </div>
+              </div>
+              <div class="p4-credit-badge">🪙 +3 credits</div>
+            </div>
+            <div class="p4-time">Submitted March 25 at 9:29 AM</div>
+            <div class="p4-divider"></div>
+            <div class="btn-approve-lg">✓ Approve — Award +3 Credits</div>
+            <div class="btn-reject-lg">✕ Reject Submission</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end parent row 1 -->
+
+<div class="screen-row">
+
+  <!-- ─── P-5: CHORE MANAGEMENT ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">P-5: Chore Management</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="parent-screen" style="position:relative;">
+          <div class="status-bar light" style="background:#fff;">
+            <span class="time">9:41</span>
+            <div class="icons"><div class="sig"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>🔋</span></div>
+          </div>
+
+          <!-- App bar -->
+          <div class="parent-appbar">
+            <div class="appbar-center">Chores</div>
+            <div class="appbar-right"><div class="icon-btn">🔍</div></div>
+          </div>
+
+          <!-- Body -->
+          <div class="parent-body" style="overflow:hidden;">
+
+            <!-- Emma group -->
+            <div class="chore-group">
+              <div class="child-group-header">
+                <div class="child-group-left">
+                  <div class="avatar-circle avatar-emma" style="width:28px;height:28px;font-size:13px;">👧</div>
+                  <span class="child-group-name">Emma</span>
+                </div>
+                <span class="chore-count-chip">5 chores</span>
+              </div>
+
+              <div class="chore-list-item">
+                <div class="chore-item-left">
+                  <div class="chore-item-name">Make Your Bed</div>
+                  <div class="chore-chips">
+                    <span class="chore-chip">Daily</span>
+                  </div>
+                </div>
+                <div class="chore-item-right"><span class="chore-item-credit">🪙 +2</span></div>
+              </div>
+
+              <div class="chore-list-item">
+                <div class="chore-item-left">
+                  <div class="chore-item-name">Do Your Homework</div>
+                  <div class="chore-chips">
+                    <span class="chore-chip">Daily</span>
+                  </div>
+                </div>
+                <div class="chore-item-right"><span class="chore-item-credit">🪙 +5</span></div>
+              </div>
+
+              <div class="chore-list-item">
+                <div class="chore-item-left">
+                  <div class="chore-item-name">Clean Your Room</div>
+                  <div class="chore-chips">
+                    <span class="chore-chip">Weekly</span>
+                    <span class="chore-chip">📷 Photo</span>
+                  </div>
+                </div>
+                <div class="chore-item-right"><span class="chore-item-credit">🪙 +3</span></div>
+              </div>
+            </div>
+
+            <!-- Lucas group -->
+            <div class="chore-group">
+              <div class="child-group-header">
+                <div class="child-group-left">
+                  <div class="avatar-circle avatar-lucas" style="width:28px;height:28px;font-size:13px;">👦</div>
+                  <span class="child-group-name">Lucas</span>
+                </div>
+                <span class="chore-count-chip">5 chores</span>
+              </div>
+
+              <div class="chore-list-item">
+                <div class="chore-item-left">
+                  <div class="chore-item-name">Set the Table</div>
+                  <div class="chore-chips"><span class="chore-chip">Daily</span></div>
+                </div>
+                <div class="chore-item-right"><span class="chore-item-credit">🪙 +1</span></div>
+              </div>
+
+              <div class="chore-list-item">
+                <div class="chore-item-left">
+                  <div class="chore-item-name">Feed the Dog</div>
+                  <div class="chore-chips"><span class="chore-chip">Daily</span></div>
+                </div>
+                <div class="chore-item-right"><span class="chore-item-credit">🪙 +2</span></div>
+              </div>
+
+              <div class="chore-list-item">
+                <div class="chore-item-left">
+                  <div class="chore-item-name">Take Out Trash</div>
+                  <div class="chore-chips"><span class="chore-chip">Weekly</span></div>
+                </div>
+                <div class="chore-item-right"><span class="chore-item-credit">🪙 +3</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAB -->
+          <div class="fab">+</div>
+
+          <!-- Bottom nav -->
+          <div class="parent-bottomnav">
+            <div class="nav-tab"><div class="nav-icon" style="color:var(--slate-400)">🏠</div><div class="nav-label">Dashboard</div></div>
+            <div class="nav-tab active"><div class="nav-icon">📋</div><div class="nav-label">Chores</div></div>
+            <div class="nav-tab" style="position:relative"><div class="nav-icon" style="color:var(--slate-400)">✅</div><div class="nav-label">Approvals</div><div class="nav-badge">1</div></div>
+            <div class="nav-tab"><div class="nav-icon" style="color:var(--slate-400)">⚙️</div><div class="nav-label">Settings</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── P-6: ADD CHORE FORM ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">P-6: Add Chore Form</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="p6-overlay">
+          <!-- Background chore list (visible behind dim) -->
+          <div style="height:100%;background:var(--slate-50);padding:0;display:flex;flex-direction:column;">
+            <div style="background:#fff;height:44px;"></div>
+            <div style="background:#fff;height:64px;border-bottom:1px solid var(--slate-200);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:var(--slate-900);">Chores</div>
+            <div style="flex:1;padding:16px;background:var(--slate-50);">
+              <div style="font-size:15px;font-weight:700;color:var(--slate-900);margin-bottom:10px;">Emma · 5 chores</div>
+              <div style="background:#fff;border-radius:10px;height:60px;margin-bottom:8px;display:flex;align-items:center;padding:0 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+                <span style="font-size:15px;font-weight:600;color:var(--slate-900);">Make Your Bed</span>
+              </div>
+              <div style="background:#fff;border-radius:10px;height:60px;display:flex;align-items:center;padding:0 16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+                <span style="font-size:15px;font-weight:600;color:var(--slate-900);">Do Your Homework</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dim -->
+          <div class="p6-dim"></div>
+
+          <!-- Sheet -->
+          <div class="p6-sheet">
+            <div class="p6-sheet-inner">
+              <div class="drag-handle" style="margin-bottom:14px;"></div>
+              <div class="p6-header">
+                <span class="p6-title">Add Chore</span>
+                <span class="p6-cancel">Cancel</span>
+              </div>
+              <div class="p6-divider"></div>
+
+              <!-- Chore Name -->
+              <div class="p6-field">
+                <div class="p6-field-label">Chore Name <span class="req">*</span></div>
+                <input class="p6-input" type="text" placeholder="e.g. Make your bed">
+              </div>
+
+              <!-- Description -->
+              <div class="p6-field">
+                <div class="p6-field-label">Description (optional)</div>
+                <textarea class="p6-textarea" placeholder="Add details to help your child know exactly what to do."></textarea>
+              </div>
+
+              <!-- Credits -->
+              <div class="p6-field">
+                <div class="p6-field-label">Credits <span class="req">*</span></div>
+                <div class="credit-picker">
+                  <div class="credit-seg">1</div>
+                  <div class="credit-seg">2</div>
+                  <div class="credit-seg active">3</div>
+                  <div class="credit-seg">4</div>
+                  <div class="credit-seg">5</div>
+                  <div class="credit-seg">6</div>
+                  <div class="credit-seg">7</div>
+                  <div class="credit-seg">8</div>
+                  <div class="credit-seg">9</div>
+                  <div class="credit-seg">10</div>
+                </div>
+                <div class="picker-hint">1 credit = 10 minutes of screen time</div>
+              </div>
+
+              <!-- Assign to -->
+              <div class="p6-field">
+                <div class="p6-field-label">Assign to <span class="req">*</span></div>
+                <div class="child-chips">
+                  <div class="child-chip selected">
+                    <div class="child-chip-avatar avatar-emma">👧</div>
+                    Emma
+                  </div>
+                  <div class="child-chip">
+                    <div class="child-chip-avatar avatar-lucas">👦</div>
+                    Lucas
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recurrence -->
+              <div class="p6-field">
+                <div class="p6-field-label">Repeats <span class="req">*</span></div>
+                <div class="recurrence-picker">
+                  <div class="rec-seg active">Daily</div>
+                  <div class="rec-seg">Weekly</div>
+                  <div class="rec-seg">One-time</div>
+                </div>
+              </div>
+
+              <!-- Photo toggle -->
+              <div class="photo-toggle-row">
+                <div class="photo-toggle-left">
+                  <div class="photo-toggle-label">Require photo proof</div>
+                  <div class="photo-toggle-sub">Child must submit a photo to get credit.</div>
+                </div>
+                <div class="toggle-switch"><div class="toggle-thumb"></div></div>
+              </div>
+
+              <!-- Save button -->
+              <div class="btn-save">Save Chore</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── P-7: SETTINGS ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">P-7: Settings</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="parent-screen">
+          <div class="status-bar light" style="background:#fff;">
+            <span class="time">9:41</span>
+            <div class="icons"><div class="sig"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>🔋</span></div>
+          </div>
+
+          <!-- App bar -->
+          <div class="parent-appbar">
+            <div class="appbar-center">Settings</div>
+          </div>
+
+          <!-- Body -->
+          <div class="p7-body">
+
+            <!-- Section: Screen Time -->
+            <div class="settings-section">
+              <div class="section-lbl">Screen Time</div>
+              <div class="settings-card">
+                <div class="setting-row">
+                  <span class="setting-icon">⏱</span>
+                  <div class="setting-text">
+                    <div class="setting-label">Credit Value</div>
+                    <div class="setting-sub">1 credit = 10 minutes</div>
+                  </div>
+                  <div class="stepper">
+                    <div class="stepper-btn minus">−</div>
+                    <div class="stepper-val">10</div>
+                    <div class="stepper-btn plus">+</div>
+                  </div>
+                </div>
+                <div class="setting-row">
+                  <span class="setting-icon">📱</span>
+                  <div class="setting-text">
+                    <div class="setting-label">Managed Apps</div>
+                    <div class="setting-sub">4 apps gated</div>
+                  </div>
+                  <div class="setting-right">›</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section: Children -->
+            <div class="settings-section">
+              <div class="section-lbl">Children</div>
+              <div class="settings-card">
+                <!-- Emma -->
+                <div class="setting-row">
+                  <div class="avatar-circle-36 avatar-emma">👧</div>
+                  <div class="setting-text">
+                    <div class="setting-label">Emma</div>
+                    <div class="setting-sub">Age 10 · Daily allowance: 2 credits</div>
+                  </div>
+                  <div class="setting-right">›</div>
+                </div>
+                <!-- Lucas -->
+                <div class="setting-row">
+                  <div class="avatar-circle-36 avatar-lucas">👦</div>
+                  <div class="setting-text">
+                    <div class="setting-label">Lucas</div>
+                    <div class="setting-sub">Age 8 · Daily allowance: 1 credit</div>
+                  </div>
+                  <div class="setting-right">›</div>
+                </div>
+                <!-- Add child -->
+                <div class="setting-row" style="border-bottom:none;">
+                  <div class="add-child-icon">+</div>
+                  <div class="setting-text">
+                    <div class="setting-label" style="color:var(--blue-500);">Add Child</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section: Parent Override -->
+            <div class="settings-section">
+              <div class="section-lbl">Parent Override</div>
+              <div class="settings-card">
+                <div class="setting-row" style="border-bottom:none;">
+                  <span class="setting-icon">⚡</span>
+                  <div class="setting-text">
+                    <div class="setting-label">Adjust a Child's Credits</div>
+                    <div class="setting-sub">Manually add or deduct credits</div>
+                  </div>
+                  <div class="setting-right">›</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section: Account -->
+            <div class="settings-section">
+              <div class="section-lbl">Account</div>
+              <div class="settings-card">
+                <div class="setting-row">
+                  <span class="setting-icon">⭐</span>
+                  <div class="setting-text">
+                    <div class="setting-label">Subscription</div>
+                    <div class="setting-sub">ChoreQuest Premium · $8/mo</div>
+                  </div>
+                  <div class="setting-right"><span class="manage-btn">Manage</span></div>
+                </div>
+                <div class="setting-row">
+                  <span class="setting-icon">📄</span>
+                  <div class="setting-text"><div class="setting-label">Privacy Policy</div></div>
+                  <div class="setting-right">› ↗</div>
+                </div>
+                <div class="setting-row">
+                  <span class="setting-icon">📜</span>
+                  <div class="setting-text"><div class="setting-label">Terms of Service</div></div>
+                  <div class="setting-right">› ↗</div>
+                </div>
+                <div class="setting-row setting-row-danger" style="border-bottom:none;">
+                  <div class="setting-text"><div class="setting-label">Delete Family Account</div></div>
+                  <div class="setting-right" style="color:var(--red-400);">›</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom nav -->
+          <div class="parent-bottomnav">
+            <div class="nav-tab"><div class="nav-icon" style="color:var(--slate-400)">🏠</div><div class="nav-label">Dashboard</div></div>
+            <div class="nav-tab"><div class="nav-icon" style="color:var(--slate-400)">📋</div><div class="nav-label">Chores</div></div>
+            <div class="nav-tab" style="position:relative"><div class="nav-icon" style="color:var(--slate-400)">✅</div><div class="nav-label">Approvals</div><div class="nav-badge">1</div></div>
+            <div class="nav-tab active"><div class="nav-icon">⚙️</div><div class="nav-label">Settings</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end parent row 2 -->
+
+<div class="screen-row">
+
+  <!-- ─── P-8: MANAGED APPS SELECTION ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">P-8: Managed Apps Selection</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="parent-screen">
+          <div class="status-bar light" style="background:#fff;">
+            <span class="time">9:41</span>
+            <div class="icons"><div class="sig"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>🔋</span></div>
+          </div>
+
+          <!-- App bar with back arrow -->
+          <div class="parent-appbar" style="justify-content:flex-start;gap:10px;">
+            <div style="font-size:18px;color:var(--slate-700);cursor:pointer;">←</div>
+            <div class="appbar-center" style="flex:1;">Managed Apps</div>
+            <div style="font-size:13px;font-weight:700;color:var(--blue-500);">Save</div>
+          </div>
+
+          <!-- Info banner -->
+          <div style="background:#EFF6FF;border-left:3px solid var(--blue-500);margin:12px 16px 4px;padding:10px 12px;border-radius:8px;">
+            <div style="font-size:12px;color:var(--blue-700,#1D4ED8);font-weight:600;margin-bottom:2px;">How it works</div>
+            <div style="font-size:11px;color:var(--slate-600);line-height:1.5;">Selected apps will be blocked when a child's credits reach 0. Essential apps (calls, camera) are never restricted.</div>
+          </div>
+
+          <!-- Child selector tabs -->
+          <div style="display:flex;gap:8px;padding:10px 16px 6px;">
+            <div style="background:var(--blue-500);color:#fff;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700;font-family:'Nunito',sans-serif;">👧 Emma</div>
+            <div style="background:var(--slate-100);color:var(--slate-600);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;font-family:'Nunito',sans-serif;">👦 Lucas</div>
+          </div>
+
+          <!-- Search bar -->
+          <div style="margin:6px 16px 8px;background:var(--slate-100);border-radius:10px;padding:8px 12px;display:flex;align-items:center;gap:8px;">
+            <span style="color:var(--slate-400);font-size:14px;">🔍</span>
+            <span style="font-size:13px;color:var(--slate-400);font-family:'Nunito',sans-serif;">Search apps…</span>
+          </div>
+
+          <!-- Section: Currently Gated -->
+          <div style="padding:4px 16px 6px;">
+            <div style="font-size:11px;font-weight:700;color:var(--slate-500);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Gated (4 apps)</div>
+            <div style="background:#fff;border-radius:12px;border:1px solid var(--slate-200);overflow:hidden;">
+
+              <!-- YouTube -->
+              <div style="display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid var(--slate-100);gap:12px;">
+                <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#FF0000,#CC0000);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">▶</div>
+                <div style="flex:1;">
+                  <div style="font-size:14px;font-weight:700;color:var(--slate-800);font-family:'Nunito',sans-serif;">YouTube</div>
+                  <div style="font-size:11px;color:var(--slate-500);">Google LLC</div>
+                </div>
+                <div style="width:48px;height:28px;background:var(--blue-500);border-radius:14px;position:relative;cursor:pointer;">
+                  <div style="width:22px;height:22px;background:#fff;border-radius:50%;position:absolute;right:3px;top:3px;box-shadow:0 1px 3px rgba(0,0,0,.2);"></div>
+                </div>
+              </div>
+
+              <!-- Minecraft -->
+              <div style="display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid var(--slate-100);gap:12px;">
+                <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#5D8A2A,#3A5C18);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">⛏</div>
+                <div style="flex:1;">
+                  <div style="font-size:14px;font-weight:700;color:var(--slate-800);font-family:'Nunito',sans-serif;">Minecraft</div>
+                  <div style="font-size:11px;color:var(--slate-500);">Mojang AB</div>
+                </div>
+                <div style="width:48px;height:28px;background:var(--blue-500);border-radius:14px;position:relative;cursor:pointer;">
+                  <div style="width:22px;height:22px;background:#fff;border-radius:50%;position:absolute;right:3px;top:3px;box-shadow:0 1px 3px rgba(0,0,0,.2);"></div>
+                </div>
+              </div>
+
+              <!-- Roblox -->
+              <div style="display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid var(--slate-100);gap:12px;">
+                <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#E0115F,#A0074A);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🎮</div>
+                <div style="flex:1;">
+                  <div style="font-size:14px;font-weight:700;color:var(--slate-800);font-family:'Nunito',sans-serif;">Roblox</div>
+                  <div style="font-size:11px;color:var(--slate-500);">Roblox Corporation</div>
+                </div>
+                <div style="width:48px;height:28px;background:var(--blue-500);border-radius:14px;position:relative;cursor:pointer;">
+                  <div style="width:22px;height:22px;background:#fff;border-radius:50%;position:absolute;right:3px;top:3px;box-shadow:0 1px 3px rgba(0,0,0,.2);"></div>
+                </div>
+              </div>
+
+              <!-- Netflix -->
+              <div style="display:flex;align-items:center;padding:12px 14px;gap:12px;">
+                <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#E50914,#A3040D);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🎬</div>
+                <div style="flex:1;">
+                  <div style="font-size:14px;font-weight:700;color:var(--slate-800);font-family:'Nunito',sans-serif;">Netflix</div>
+                  <div style="font-size:11px;color:var(--slate-500);">Netflix, Inc.</div>
+                </div>
+                <div style="width:48px;height:28px;background:var(--blue-500);border-radius:14px;position:relative;cursor:pointer;">
+                  <div style="width:22px;height:22px;background:#fff;border-radius:50%;position:absolute;right:3px;top:3px;box-shadow:0 1px 3px rgba(0,0,0,.2);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Not Gated -->
+          <div style="padding:6px 16px 12px;">
+            <div style="font-size:11px;font-weight:700;color:var(--slate-500);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Not Gated</div>
+            <div style="background:#fff;border-radius:12px;border:1px solid var(--slate-200);overflow:hidden;">
+
+              <!-- Chrome -->
+              <div style="display:flex;align-items:center;padding:12px 14px;border-bottom:1px solid var(--slate-100);gap:12px;">
+                <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#4285F4,#34A853);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🌐</div>
+                <div style="flex:1;">
+                  <div style="font-size:14px;font-weight:700;color:var(--slate-800);font-family:'Nunito',sans-serif;">Chrome</div>
+                  <div style="font-size:11px;color:var(--slate-500);">Google LLC</div>
+                </div>
+                <div style="width:48px;height:28px;background:var(--slate-200);border-radius:14px;position:relative;cursor:pointer;">
+                  <div style="width:22px;height:22px;background:#fff;border-radius:50%;position:absolute;left:3px;top:3px;box-shadow:0 1px 3px rgba(0,0,0,.15);"></div>
+                </div>
+              </div>
+
+              <!-- Spotify -->
+              <div style="display:flex;align-items:center;padding:12px 14px;gap:12px;">
+                <div style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#1DB954,#158a3e);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🎵</div>
+                <div style="flex:1;">
+                  <div style="font-size:14px;font-weight:700;color:var(--slate-800);font-family:'Nunito',sans-serif;">Spotify</div>
+                  <div style="font-size:11px;color:var(--slate-500);">Spotify AB</div>
+                </div>
+                <div style="width:48px;height:28px;background:var(--slate-200);border-radius:14px;position:relative;cursor:pointer;">
+                  <div style="width:22px;height:22px;background:#fff;border-radius:50%;position:absolute;left:3px;top:3px;box-shadow:0 1px 3px rgba(0,0,0,.15);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── P-9: SCREEN TIME CREDIT CONFIGURATION ─── -->
+  <div class="screen-wrap">
+    <div class="screen-label">P-9: Screen Time Configuration</div>
+    <div class="phone">
+      <div class="notch"></div>
+      <div class="phone-inner">
+        <div class="parent-screen">
+          <div class="status-bar light" style="background:#fff;">
+            <span class="time">9:41</span>
+            <div class="icons"><div class="sig"><span></span><span></span><span></span><span></span></div><span>WiFi</span><span>WiFi</span><span>🔋</span></div>
+          </div>
+
+          <!-- App bar -->
+          <div class="parent-appbar" style="justify-content:flex-start;gap:10px;">
+            <div style="font-size:18px;color:var(--slate-700);">←</div>
+            <div class="appbar-center" style="flex:1;">Screen Time Setup</div>
+            <div style="font-size:13px;font-weight:700;color:var(--blue-500);">Save</div>
+          </div>
+
+          <div style="overflow-y:auto;flex:1;padding:0 16px 100px;">
+
+            <!-- Global credit ratio card -->
+            <div style="margin-bottom:16px;">
+              <div style="font-size:11px;font-weight:700;color:var(--slate-500);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;">Credit Value</div>
+              <div style="background:#fff;border-radius:12px;border:1px solid var(--slate-200);padding:16px;">
+                <div style="font-size:13px;color:var(--slate-600);margin-bottom:12px;font-family:'Nunito',sans-serif;">How many minutes of screen time does 1 credit unlock?</div>
+                <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:14px;">
+                  <div style="width:44px;height:44px;border-radius:50%;background:var(--slate-100);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:var(--slate-700);cursor:pointer;font-family:'Nunito',sans-serif;">−</div>
+                  <div style="text-align:center;">
+                    <div style="font-size:40px;font-weight:800;color:var(--blue-500);font-family:'Nunito',sans-serif;line-height:1;">10</div>
+                    <div style="font-size:12px;color:var(--slate-500);margin-top:2px;">minutes / credit</div>
+                  </div>
+                  <div style="width:44px;height:44px;border-radius:50%;background:var(--blue-500);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;cursor:pointer;font-family:'Nunito',sans-serif;">+</div>
+                </div>
+                <!-- Slider track -->
+                <div style="position:relative;height:6px;background:var(--slate-200);border-radius:3px;margin:0 4px;">
+                  <div style="position:absolute;left:0;width:33%;height:6px;background:var(--blue-500);border-radius:3px;"></div>
+                  <div style="position:absolute;left:calc(33% - 10px);top:-7px;width:20px;height:20px;border-radius:50%;background:var(--blue-500);border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2);"></div>
+                </div>
+                <div style="display:flex;justify-content:space-between;margin-top:6px;">
+                  <span style="font-size:10px;color:var(--slate-400);">5 min</span>
+                  <span style="font-size:10px;color:var(--slate-400);">30 min</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Per-child preview -->
+            <div style="margin-bottom:16px;">
+              <div style="font-size:11px;font-weight:700;color:var(--slate-500);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;">Today's Preview</div>
+
+              <!-- Emma card -->
+              <div style="background:#fff;border-radius:12px;border:1px solid var(--slate-200);padding:14px;margin-bottom:10px;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+                  <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#F472B6,#EC4899);display:flex;align-items:center;justify-content:center;font-size:18px;">👧</div>
+                  <div>
+                    <div style="font-size:15px;font-weight:800;color:var(--slate-800);font-family:'Nunito',sans-serif;">Emma</div>
+                    <div style="font-size:11px;color:var(--slate-500);">7 credits today</div>
+                  </div>
+                  <div style="margin-left:auto;background:#EFF6FF;color:var(--blue-600,#2563EB);padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700;font-family:'Nunito',sans-serif;">70 min unlocked</div>
+                </div>
+                <!-- Credit breakdown bar -->
+                <div style="font-size:11px;color:var(--slate-600);margin-bottom:6px;">Credit breakdown</div>
+                <div style="display:flex;gap:4px;margin-bottom:8px;">
+                  <div style="flex:2;background:var(--blue-500);height:8px;border-radius:4px;" title="Daily allowance"></div>
+                  <div style="flex:5;background:#10B981;height:8px;border-radius:4px;" title="Earned from chores"></div>
+                </div>
+                <div style="display:flex;gap:16px;">
+                  <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:var(--blue-500);"></div><span style="font-size:10px;color:var(--slate-500);">2 daily allowance</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:#10B981;"></div><span style="font-size:10px;color:var(--slate-500);">5 from chores</span></div>
+                </div>
+              </div>
+
+              <!-- Lucas card -->
+              <div style="background:#fff;border-radius:12px;border:1px solid var(--slate-200);padding:14px;">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+                  <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#60A5FA,#3B82F6);display:flex;align-items:center;justify-content:center;font-size:18px;">👦</div>
+                  <div>
+                    <div style="font-size:15px;font-weight:800;color:var(--slate-800);font-family:'Nunito',sans-serif;">Lucas</div>
+                    <div style="font-size:11px;color:var(--slate-500);">3 credits today</div>
+                  </div>
+                  <div style="margin-left:auto;background:#FFF7ED;color:#C2410C;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700;font-family:'Nunito',sans-serif;">30 min unlocked</div>
+                </div>
+                <div style="font-size:11px;color:var(--slate-600);margin-bottom:6px;">Credit breakdown</div>
+                <div style="display:flex;gap:4px;margin-bottom:8px;">
+                  <div style="flex:1;background:var(--blue-500);height:8px;border-radius:4px;"></div>
+                  <div style="flex:2;background:#10B981;height:8px;border-radius:4px;"></div>
+                </div>
+                <div style="display:flex;gap:16px;">
+                  <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:var(--blue-500);"></div><span style="font-size:10px;color:var(--slate-500);">1 daily allowance</span></div>
+                  <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:#10B981;"></div><span style="font-size:10px;color:var(--slate-500);">2 from chores</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Daily limit toggle -->
+            <div style="margin-bottom:16px;">
+              <div style="font-size:11px;font-weight:700;color:var(--slate-500);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;">Daily Maximum</div>
+              <div style="background:#fff;border-radius:12px;border:1px solid var(--slate-200);overflow:hidden;">
+                <div style="display:flex;align-items:center;padding:14px;border-bottom:1px solid var(--slate-100);">
+                  <div style="flex:1;">
+                    <div style="font-size:14px;font-weight:700;color:var(--slate-800);font-family:'Nunito',sans-serif;">Cap total screen time</div>
+                    <div style="font-size:11px;color:var(--slate-500);margin-top:2px;">Even if credits remain, enforce a daily max</div>
+                  </div>
+                  <div style="width:48px;height:28px;background:var(--slate-200);border-radius:14px;position:relative;">
+                    <div style="width:22px;height:22px;background:#fff;border-radius:50%;position:absolute;left:3px;top:3px;box-shadow:0 1px 3px rgba(0,0,0,.15);"></div>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;padding:14px;opacity:.4;">
+                  <div style="flex:1;">
+                    <div style="font-size:14px;font-weight:700;color:var(--slate-800);font-family:'Nunito',sans-serif;">Maximum per day</div>
+                    <div style="font-size:11px;color:var(--slate-500);">Currently: unlimited</div>
+                  </div>
+                  <div style="font-size:14px;font-weight:700;color:var(--slate-500);font-family:'Nunito',sans-serif;">— h</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Permission note -->
+            <div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;">
+              <span style="font-size:16px;">⚠️</span>
+              <div style="font-size:11px;color:#92400E;line-height:1.5;font-family:'Nunito',sans-serif;">Enforcement requires the <strong>Usage Access</strong> permission. <span style="color:var(--blue-500);font-weight:700;">Grant permission →</span></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end parent row 3 -->
+
+</body>
+</html>
